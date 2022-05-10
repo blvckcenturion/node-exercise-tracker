@@ -3,8 +3,7 @@ const mongoose = require('mongoose')
 const validate = require('mongoose-validator')
 
 const userNameValidator = [
-    validate({ validator: 'isLength', arguments: [3, 20], msg: 'Username must be between 3 and 20 characters' }),
-    validate({ validator: 'isAlphanumeric', msg: 'Username must contain only letters and numbers' })
+    validate({ validator: 'isLength', arguments: [3, 40], msg: 'Username must be between 3 and 20 characters' }),
 ]
 
 const userSchema = new mongoose.Schema({

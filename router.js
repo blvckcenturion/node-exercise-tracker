@@ -24,12 +24,12 @@ router.post('/users', (req, res) => {
             res.json(user)
             return;
         }
-        new User({username: req.body.username}).save((err, user) => { 
+        new User({username: req.body.username}).save((err, u) => { 
             if (err) {
                 res.status(500).send(err)
                 return;
             }
-            res.json(user)
+            res.json({username: u.username, _id: u._id})
         })
     })
 })
